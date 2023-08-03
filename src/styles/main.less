@@ -19,10 +19,22 @@ body{
     color: #colors[textColor];
 }
 
+li{
+    list-style: none;
+}
+
 .container{
-    max-width: 960px;//Lagura máxima do container
-    width: 100%;//O container ocupa todo o espaço disponível.
-    margin: 0 auto; //Centralizar conteúdo horizontalmente.
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;//Ocupando 100% do ViewPort
+
+    //background-color: red; Uma das maneiras de visualizar o container.
+    //Centralizaçao na vertical:
+    display: flex;
+    flex-direction: column;
+    //Substitui o align-itens para este tipo de disposição
+    justify-content: center;
     
     @media @breakPointMobile{
         max-width: 70%;
@@ -34,7 +46,7 @@ body{
 }
 
 header{
-    padding: 24px;
+    padding-bottom: 24px;
 
     .profile-avatar{
         display: block;
@@ -69,12 +81,34 @@ header{
     width: 100%;
     margin: 0 auto;
     li{
-        list-style: none;
-
         img{
             transition: all ease .3s; //Efeito de transição mais suave da imagem.
             &:hover{
                 transform: scale(1.3); //Definida escala de 130%, ou seja, 30% a mais no tamanho da imagem.
+            }
+        }
+    }
+}
+
+.project-list{
+    margin-top: 32px;
+    &-item{
+        a{
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+            transition: all ease .5s;
+
+            &:hover{
+                color: #colors[buttonColor];
+                background-color: transparent;
             }
         }
     }
